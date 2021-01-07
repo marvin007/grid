@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.grid > [class^=col],
+.styled-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 10px;
+    min-height: 60px;
+    color: #333;
+    background: #F4F3F8;
+    border: 1px solid #EAEAEA;
+}
+
+.styled-block {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

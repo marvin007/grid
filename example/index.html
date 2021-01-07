@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Grid system</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../build/grid.min.css" rel="stylesheet">
+    <link href="example.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Grid system</h1>
+        </div>
+        <div class="grid section">
+            <div class="col-12">.col-12 (default)</div>
+        </div>
+        <div class="grid section">
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-8 hidden-down-md">.col-md-8.hidden-down-md</div>
+            <div class="col-md-2">.col-md-2</div>
+        </div>
+        <div class="grid section">
+            <div class="col-6 col-md-2 col-start-md-3">.col-6.col-md-2.col-start-md-3</div>
+            <div class="col-6 col-md-2">.col-6.col-md-2</div>
+            <div class="col-6 col-md-2">.col-6.col-md-2</div>
+            <div class="col-6 col-md-2">.col-6.col-md-2</div>
+        </div>
+        <div class="grid section">
+            <div class="col-start-2 col-end-2">.col-start-2.col-end-2</div>
+        </div>
+        <div class="grid section">
+            <div class="col-3 col-end-3">.col-3.col-end-3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h1>Containers</h1>
+        </div>
+        <div class="container styled-block">.container</div>
+        <div class="container-xs styled-block">.container-xs</div>
+        <div class="container-sm styled-block">.container-sm</div>
+        <div class="container-md styled-block">.container-md</div>
+        <div class="container-lg styled-block">.container-lg</div>
+        <div class="container-fluid styled-block">.container-fluid</div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h1>Classes</h1>
+            <p>.container</p>
+            <p>.container-{breakpoint}</p>
+            <p>.container-fluid</p>
+            <p>.grid</p>
+            <p>.col-{col-size}</p>
+            <p>.col-{breakpoint}-{col-size}</p>
+            <p>.col-start-{line-number}</p>
+            <p>.col-start-{breakpoint}-{line-number}</p>
+            <p>.col-end-{line-number}</p>
+            <p>.col-end-{breakpoint}-{line-number}</p>
+            <p>.hidden-up-{breakpoint}</p>
+            <p>.hidden-down-{breakpoint}</p>
+            <p>.hidden-between-{breakpoint-from}-{breakpoint-to}</p>
+        </div>
+        <div class="section">
+            <h1>Variables</h1>
+            <p>
+                $grid-columns: 12<br>
+                $grid-gap: 30px<br>
+                $container-gap: $grid-gap<br>
+                $grid-breakpoints: (xs: 576px, sm: 768px, md: 992px, lg: 1200px)<br>
+                $container-widths: (xs: 540px, sm: 720px, md: 960px, lg: 1190px)
+            </p>
+        </div>
+        <div class="section">
+            <h1>Mixins</h1>
+            <p>
+                +mq-up(lg) = @media (min-width: 1200px)<br>
+                +mq-down(lg) = @media (max-width: 1199.98px)<br>
+                +mq-between(md, lg) = @media (min-width: 992px) and (max-width: 1199.98px)
+            </p>
+            <p>
+                +mq-up(1280px) = @media (min-width: 1280px)<br>
+                +mq-down(1280px) = @media (max-width: 1280px)<br>
+                +mq-between(md, 1280px) = @media (min-width: 992px) and (max-width: 1280px)<br>
+                +mq-between(900px, lg) = @media (min-width: 900px) and (max-width: 1199.98px)
+            </p>
+        </div>
+        <div class="section">
+            <h1>Js</h1>
+            <p>
+                import mq from 'grid'
+            </p>
+            <p>
+                mq.breakpoints
+                <br>
+                {
+                xs: '576',
+                sm: '768',
+                md: '992',
+                lg: '1200'
+                }
+            </p>
+            <p>
+                mq.up('lg') = @media (min-width: 1200px)<br>
+                mq.down('lg') = @media (max-width: 1199.98px)<br>
+                mq.between('md', 'lg') = @media (min-width: 992px) and (max-width: 1199.98px)
+            </p>
+            <p>
+                mq.up(1280) = @media (min-width: 1280px)<br>
+                mq.down(1280) = @media (max-width: 1280px)<br>
+                mq.between('md', 1280) = @media (min-width: 992px) and (max-width: 1280px)<br>
+                mq.between(900, 'lg') = @media (min-width: 900px) and (max-width: 1199.98px)
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
