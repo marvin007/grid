@@ -28,8 +28,7 @@
 
     > *
         grid-column: span $grid-columns / span $grid-columns
-        width: calc(100% - var(--grid-gap, 0px))
-        justify-self: end
+        margin-left: var(--grid-gap, 0px)
 
 @for $i from 1 through $grid-columns
     .col-#{$i}

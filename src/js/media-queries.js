@@ -1,4 +1,4 @@
-let breakpoints = getStylePropValue('--breakpoints-list').split('-')
+const breakpoints = getStylePropValue('--breakpoints-list').split('-')
     .reduce((breakpoints, breakpoint) => {
         breakpoints[breakpoint] = parseFloat(getStylePropValue(`--breakpoint-${breakpoint}`));
 
@@ -7,14 +7,14 @@ let breakpoints = getStylePropValue('--breakpoints-list').split('-')
 
 function mqUp(breakpoint, returnMql = false) {
     breakpoint = formattedBreakpointValue(breakpoints[breakpoint] || breakpoint);
-    let mql = window.matchMedia(`(min-width: ${breakpoint})`);
+    const mql = window.matchMedia(`(min-width: ${breakpoint})`);
 
     return returnMql ? mql : mql.matches;
 }
 
 function mqDown(breakpoint, returnMql = false) {
     breakpoint = formattedBreakpointValue(breakpoints[breakpoint] || breakpoint, !!breakpoints[breakpoint]);
-    let mql = window.matchMedia(`(max-width: ${breakpoint})`);
+    const mql = window.matchMedia(`(max-width: ${breakpoint})`);
 
     return returnMql ? mql : mql.matches;
 }
@@ -22,7 +22,7 @@ function mqDown(breakpoint, returnMql = false) {
 function mqBetween(breakpointFrom, breakpointTo, returnMql = false) {
     breakpointFrom = formattedBreakpointValue(breakpoints[breakpointFrom] || breakpointFrom);
     breakpointTo = formattedBreakpointValue(breakpoints[breakpointTo] || breakpointTo, !!breakpoints[breakpointTo]);
-    let mql = window.matchMedia(`(min-width: ${breakpointFrom}) and (max-width: ${breakpointTo})`);
+    const mql = window.matchMedia(`(min-width: ${breakpointFrom}) and (max-width: ${breakpointTo})`);
 
     return returnMql ? mql : mql.matches;
 }
